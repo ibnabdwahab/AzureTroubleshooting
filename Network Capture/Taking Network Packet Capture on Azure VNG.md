@@ -41,7 +41,8 @@ $context = New-AzStorageContext -StorageAccountName $storageAccountName -Storage
 $container = New-AzStorageContainer -Name $containerName -Context $context
 $sasurl = New-AzStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime (Get-Date).AddHours(-1) -ExpiryTime (Get-Date).AddDays(1) -FullUri
 
-$a = "{`"TracingFlags`": 11,`"MaxPacketBufferSize`": 120,`"MaxFileSize`": 500,`"Filters`" :[{`"CaptureSingleDirectionTrafficOnly`": true}]}"
+#Use {`"CaptureSingleDirectionTrafficOnly`": true} if you desire to capture one-way traffic
+$a = "{`"TracingFlags`": 11,`"MaxPacketBufferSize`": 120,`"MaxFileSize`": 500,`"Filters`" :[{`"CaptureSingleDirectionTrafficOnly`": false}]}"
 
 #Start Network Capture
 Start-AzVirtualNetworkGatewayPacketCapture -Name $gwname -ResourceGroupName $rgname -FilterData $a
