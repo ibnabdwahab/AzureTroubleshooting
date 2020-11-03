@@ -97,9 +97,14 @@ Snippet below shows ICMP traffic being sent across the tunnel.
 
 ![Two-way ping](https://user-images.githubusercontent.com/40485440/92325198-96650f00-f040-11ea-89c4-ff904c7e30fc.png)
 
-Note:
+# Note:
+
 •	This script is prepared to run on Azure CLI.
+
 •	It is advisable to run the captures for at least 600 seconds.
+
 •	The script creates a storage account, a container within the storage account hosts both capture files (each for the VNG instances
+
+
 
 
