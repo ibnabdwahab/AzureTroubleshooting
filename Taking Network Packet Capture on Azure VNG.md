@@ -12,43 +12,46 @@ If you have the below script (Default) in my earlier post, it came to my discove
 
 **************************
        
-       Default
+     Default Script
        
 **************************
 
-Default script
+
 
 ********************************************************************************************************************************************************************************
 
-$rgname = "xxxxxxxx" $gwname = "xxxx" $storageAccountName = "xxxxxxxx" $containerName = "xxxxxxx"
+    $rgname = "xxxxxxxx" 
+    $gwname = "xxxx" 
+    $storageAccountName = "xxxxxxxx" 
+    $containerName = "xxxxxxx"
 
-$rg = Get-AzResourceGroup -name $rgname $storageAccount = New-AzStorageAccount -ResourceGroupName $rgname -Name $storageAccountName -Location 
+    $rg = Get-AzResourceGroup -name $rgname $storageAccount = New-AzStorageAccount -ResourceGroupName $rgname -Name $storageAccountName -Location 
 
-$rg.Location -SkuName "Standard_LRS" 
+    $rg.Location -SkuName "Standard_LRS" 
 
-$key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storageAccountName 
+    $key = Get-AzStorageAccountKey -ResourceGroupName $rgname -Name $storageAccountName 
 
-$context = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $key[0].Value 
+    $context = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $key[0].Value 
 
-$container = New-AzStorageContainer -Name $containerName -Context $context 
+    $container = New-AzStorageContainer -Name $containerName -Context $context 
 
-$sasurl = New-AzStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime (Get-Date).AddHours(-1) -ExpiryTime (Get-Date).AddDays(1) -FullUri
+    $sasurl = New-AzStorageContainerSASToken -Name $containerName -Context $context -Permission "rwd" -StartTime (Get-Date).AddHours(-1) -ExpiryTime (Get-Date).AddDays(1) -    FullUri
 
-#Start Network Capture Start-AzVirtualNetworkGatewayPacketCapture -Name $gwname -ResourceGroupName $rgname -FilterData $a
+    #Start Network Capture Start-AzVirtualNetworkGatewayPacketCapture -Name $gwname -ResourceGroupName $rgname -FilterData $a
 
-#Stop Network Capture Stop-AzVirtualNetworkGatewayPacketCapture -Name $gwname -ResourceGroupName $rgname -SasUrl $sasurl
+    #Stop Network Capture Stop-AzVirtualNetworkGatewayPacketCapture -Name $gwname -ResourceGroupName $rgname -SasUrl $sasurl
 
 ********************************************************************************************************************************************************************************
 
-Next 
+
 
 **************************
 
-Modified
+    Modified Script
 
 **************************
 
-Modified script
+
 
 ********************************************************************************************************************************************************************************
 
