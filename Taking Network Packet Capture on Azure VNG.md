@@ -1,8 +1,8 @@
-*******************************************************************************************
 
-                    Taking Network Packet Capture on Azure VNG
+
+##             Taking Network Packet Capture on Azure VNG
           
-*******************************************************************************************
+
 
 Network packet capture allows you to create capture sessions to track traffic to and from a virtual machine. Packet capture helps to diagnose network anomalies, both reactively, and proactively. Other uses include gathering network statistics, gaining information on network intrusions, to debug client-server communication, and much more. Being able to remotely trigger packet captures, eases the burden of running a packet capture manually on a desired virtual machine, which saves valuable time. In this article, you learn to capture network packet traversing Azure VNG using PowerShell script.
 
@@ -12,7 +12,7 @@ If you have the below script (Default) in my earlier post, it came to my discove
 
 **************************
        
-     Default Script
+ ##    Default Script
        
 **************************
 
@@ -47,7 +47,7 @@ If you have the below script (Default) in my earlier post, it came to my discove
 
 **************************
 
-    Modified Script
+##    Modified Script
 
 **************************
 
